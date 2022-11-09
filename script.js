@@ -29,6 +29,7 @@ generateEl.addEventListener('click', () => {
 })
 
 function generatePassword(lower, upper, number, symbol, length) {
+    length = lengthEl.value;
     let obj = [
         [getRandomLower, 0],
         [getRandomUpper, 0],
@@ -59,7 +60,7 @@ function generatePassword(lower, upper, number, symbol, length) {
         password = password + obj[randomNumber][0]()
         console.log("Calling at the end", obj[randomNumber][0])
     }
-    console.log(password);
+    resultEl.innerText = password;
 }
 
 function getRandomLower() {
